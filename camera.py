@@ -14,7 +14,7 @@ def photo(number):
 #  image = '/home/pi/myNas/image'+str(number)+'.jpg'
   image = '/home/pi/camera/image'+str(number)+'.jpg'
   camera.capture(image)
-  print ('click') 
+  print ('click click')
    
 def tearDown():
   camera.close();    
