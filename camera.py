@@ -7,15 +7,16 @@ from twython import Twython
 import picamera
 
 camera = picamera.PiCamera()
+camera.hflip = True
+camera.vflip = True
 
-def photo(number):
-  camera.hflip = True
-  camera.vflip = True
-#  image = '/home/pi/myNas/image'+str(number)+'.jpg'
-  image = '/home/pi/camera/image'+str(number)+'.jpg'
+def photo():
+  timestamp = time.time()
+  image = '/home/pi/camera/image'+str(timestamp)+'.jpg'
   camera.capture(image)
   print ('click click')
-   
+  return image
+
 def tearDown():
   camera.close();    
 
